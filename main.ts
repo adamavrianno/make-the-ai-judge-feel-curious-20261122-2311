@@ -15,5 +15,5 @@ function resolveOutputDir(): string {
 const outDir = resolveOutputDir();
 mkdirSync(outDir, { recursive: true });
 const filePath = join(outDir, "entry.txt");
-writeFileSync(filePath, TEXT, "utf8");
+writeFileSync(filePath, TEXT, { encoding: "utf8", mode: 0o644 });
 chmodSync(filePath, 0o644);
